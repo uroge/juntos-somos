@@ -1,0 +1,45 @@
+@import "../../sass/base/variables";
+
+.pagination {
+  margin: auto;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    text-decoration: none;
+    border: 1px solid $color-white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-white;
+    }
+
+    &:hover a {
+      color: $color-black;
+    }
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    a {
+      color: $color-white;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+  }
+}
+
+.active {
+  background-color: $color-white;
+
+  a {
+    color: $color-black;
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../sass/base/variables";
+
+.header {
+  background-color: $color-grey;
+  padding: 2.8rem 15.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    width: 11.7%;
+    height: auto;
+  }
+}
