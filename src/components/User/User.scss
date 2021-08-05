@@ -1,0 +1,45 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1.6rem;
+  width: calc((100% - 1.6rem) / 3);
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  &__photo {
+    padding-top: 9.7rem;
+    width: 25.769%;
+    border-radius: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__name {
+    margin: 2.4rem;
+    color: #222d39;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+
+  &__location {
+    margin-bottom: 1.2rem;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    color: #222d39;
+  }
+
+  &__street {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: #222d39;
+  }
+}
