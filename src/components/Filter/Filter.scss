@@ -1,0 +1,39 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.6rem;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-bottom: 1.6rem;
+
+  p {
+    font-size: 16px;
+    line-height: 28px;
+    color: #222d39;
+  }
+
+  &__dropdown {
+    display: flex;
+    align-items: center;
+
+    span {
+      color: #222d39;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+    }
+
+    select {
+      border: none;
+      color: #222d39;
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+  }
+}

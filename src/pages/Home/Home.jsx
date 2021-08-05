@@ -7,6 +7,7 @@ import { getUsers } from '../../store/actions/actions';
 
 import Users from '../../components/Users/Users';
 import SortOptions from '../../components/SortOptions/SortOptions';
+import Filter from '../../components/Filter/Filter';
 
 const Home = () => {
     const users = useSelector(state => state.users);
@@ -25,6 +26,7 @@ const Home = () => {
         <div className="home">
             <SortOptions />
             <div className="home__users">
+                <Filter />
                 <Users users={ users } />
             </div>
         </div>
