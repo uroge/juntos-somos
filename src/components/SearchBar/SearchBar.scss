@@ -9,6 +9,11 @@
   border-radius: 3.2rem;
   width: 48.5%;
 
+  ::placeholder {
+    color: #9b9b9b;
+    opacity: 1;
+  }
+
   input {
     border: none;
     font-family: inherit;
