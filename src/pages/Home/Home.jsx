@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUsers } from '../../store/actions/actions';
 
 import Users from '../../components/Users/Users';
+import SortOptions from '../../components/SortOptions/SortOptions';
 
 const Home = () => {
     const users = useSelector(state => state.users);
@@ -22,7 +23,10 @@ const Home = () => {
 
     return(
         <div className="home">
-            <Users users={users} />
+            <SortOptions />
+            <div className="home__users">
+                <Users users={ users } />
+            </div>
         </div>
     );
 };

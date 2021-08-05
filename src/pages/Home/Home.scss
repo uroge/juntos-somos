@@ -1,0 +1,9 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.4rem 15.2rem;
+
+  &__users {
+    width: 80%;
+  }
+}
