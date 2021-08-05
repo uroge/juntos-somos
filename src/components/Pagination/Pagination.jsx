@@ -2,11 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import './Pagination.scss';
 
-const Pagination = ({ bikesPerPage, totalBikes, paginate }) => {
+const Pagination = ({ usersPerPage, totalUsers, paginate }) => {
     const pageNumbers = [];
     const [activePage, setActivePage] = useState(1);
     
-    for(let i = 1; i <= Math.ceil(totalBikes / bikesPerPage); i++) {
+    for(let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
         pageNumbers.push(i);
     }
 
