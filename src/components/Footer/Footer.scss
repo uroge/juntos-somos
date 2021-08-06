@@ -1,0 +1,31 @@
+.footer {
+  background-color: #3a3a3a;
+  padding: 3.2rem 0 5.6rem 0;
+  text-align: center;
+
+  &__logo {
+    margin-bottom: 2.4rem;
+  }
+
+  h5 {
+    font-weight: 500;
+    font-size: 1.6rem;
+    margin-bottom: 2.4rem;
+    color: #ffffff;
+  }
+
+  p {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+  }
+
+  &__icons {
+  }
+
+  &__icon {
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+  }
+}
