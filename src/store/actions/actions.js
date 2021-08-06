@@ -6,3 +6,11 @@ export const getUsers = users => {
         payload: users
     }
 };
+
+
+export const getFilteredUsers = filteredUsers => {
+    return {
+        type: actionTypes.FILTER_USERS,
+        payload: filteredUsers
+    }
+};

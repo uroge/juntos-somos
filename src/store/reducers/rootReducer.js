@@ -1,7 +1,8 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    users: []
+    users: [],
+    filteredUsers: []
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -11,7 +12,12 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 users: [...action.payload]
             }
-    
+
+        case actionTypes.FILTER_USERS:
+            return {
+                ...state,
+                filteredUsers: [...action.payload]
+            }
         default:
             return state;
     }

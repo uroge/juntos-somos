@@ -15,14 +15,15 @@ const Home = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [usersPerPage] = useState(9);
     
-    const users = useSelector(state => state.users);
+    // const users = useSelector(state => state.users);
+    const users = useSelector(state => state.filteredUsers.length ? state.filteredUsers : state.users);
     const dispatch = useDispatch();
 
     useEffect(() => {
         axios.get('data.json')
         .then(response => {
             console.log(response.data.results);
-            setNumberOfUsers(response.data.results.slice(0, 50).length)
+            setNumberOfUsers(response.data.results.slice(0, 50).length);
             dispatch(getUsers(response.data.results.slice(0, 50)));
         })
         .catch(error => console.log(error));
@@ -42,7 +43,7 @@ const Home = () => {
             <div className="home__users">
                 <Filter />
                 <Users users={ currentUsers } />
-                <Pagination usersPerPage={ usersPerPage } totalUsers={ numberOfUsers } paginate={ paginate } />
+                <Pagination usersPerPage={ usersPerPage } totalUsers={ users ? users.length : numberOfUsers } paginate={ paginate } />
             </div>
         </div>
     );
