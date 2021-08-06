@@ -17,6 +17,8 @@
   }
 
   &__option {
+    display: flex;
+    align-items: center;
     input {
       background: #4a4a4a;
     }

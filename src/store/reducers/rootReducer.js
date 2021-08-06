@@ -18,6 +18,12 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 filteredUsers: [...action.payload]
             }
+
+        case actionTypes.CONCAT_USERS:   
+            return {
+                ...state,
+                filteredUsers: [...action.payload, ...state.filteredUsers]
+            }
         default:
             return state;
     }

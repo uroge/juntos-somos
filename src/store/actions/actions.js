@@ -14,3 +14,11 @@ export const getFilteredUsers = filteredUsers => {
         payload: filteredUsers
     }
 };
+
+export const concatFilteredUsers = filteredUsers => {
+    console.log(filteredUsers);
+    return {
+        type: actionTypes.CONCAT_USERS,
+        payload: filteredUsers
+    }
+};
