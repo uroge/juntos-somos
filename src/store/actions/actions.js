@@ -15,10 +15,16 @@ export const getFilteredUsers = filteredUsers => {
     }
 };
 
-export const concatFilteredUsers = filteredUsers => {
-    console.log(filteredUsers);
+export const sortUsers = (filteredProducts, sort) => {
+    const sortedUsers = filteredProducts.slice();
+    if(sort === 'name') {
+        sortedUsers.sort((a, b) => a.name.first > b.name.first ? 1 : -1);
+    } else {
+        sortedUsers.sort((a, b) => a.name.last > b.name.last ? 1 : -1);
+    }
+
     return {
-        type: actionTypes.CONCAT_USERS,
-        payload: filteredUsers
+        type: actionTypes.SORT_USERS,
+        payload: sortedUsers
     }
 };

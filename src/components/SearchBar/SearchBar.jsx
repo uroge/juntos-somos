@@ -13,9 +13,15 @@ const SearchBar = () => {
 
     const searchUsers = (event) => {
         setSearchTerm(event.target.value);
+        
         if(users) {
             const filteredUsers = users.filter(user => user.name.first.includes(searchTerm.toLowerCase()));
-            dispatch(getFilteredUsers(filteredUsers));
+
+            if(filteredUsers.length) {
+                dispatch(getFilteredUsers(filteredUsers));
+            } else {
+                dispatch(getFilteredUsers(users));
+            }
         }
     };
 

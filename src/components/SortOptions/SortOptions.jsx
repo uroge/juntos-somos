@@ -1,25 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SortOptions.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { concatFilteredUsers, getFilteredUsers } from '../../store/actions/actions';
+import { getFilteredUsers } from '../../store/actions/actions';
 
 const SortOptions = (props) => {
     const dispatch = useDispatch();
     const users = useSelector(state => state.users);
-    const filteredUsers = useSelector(state => state.filteredUsers);
 
-    const filterUsers = (event) => {
-        const city = event.target.name.toLowerCase();
-        let usersToAdd = [];
+    const filterByCity = (event) => {
 
-        if(event.target.checked) {
-            usersToAdd = filteredUsers.filter(user => user.location.city === city);
-
-            dispatch(getFilteredUsers(usersToAdd));
-        } else {
-            // When checkbox gets unchecked
-        }
     };
 
     const filterByGender = (event) => {
@@ -46,23 +36,23 @@ const SortOptions = (props) => {
             </div>
             <h3 className="sort__header">By State</h3>
             <div className="sort__option">
-                <input type="checkbox" name="Coronel Fabriciano" onChange={(event) => filterUsers(event)} />
+                <input type="checkbox" name="Coronel Fabriciano" onChange={(event) => filterByCity(event)} />
                 <span>Coronel Fabriciano</span>
             </div>
             <div className="sort__option">
-                <input type="checkbox" name="Nova Iguaçu" onChange={(event) => filterUsers(event)} />
+                <input type="checkbox" name="Nova Iguaçu" onChange={(event) => filterByCity(event)} />
                 <span>Nova Iguaçu</span>
             </div>
             <div className="sort__option">
-                <input type="checkbox" name="Itaguaí" onChange={(event) => filterUsers(event)} />
+                <input type="checkbox" name="Itaguaí" onChange={(event) => filterByCity(event)} />
                 <span>Itaguaí</span>
             </div>
             <div className="sort__option">
-                <input type="checkbox" name="São João De Meriti" onChange={(event) => filterUsers(event)} />
+                <input type="checkbox" name="São João De Meriti" onChange={(event) => filterByCity(event)} />
                 <span>São João De Meriti</span>
             </div>
             <div className="sort__option">
-                <input type="checkbox" name="Bento Gonçalves" onChange={(event) => filterUsers(event)} />
+                <input type="checkbox" name="Bento Gonçalves" onChange={(event) => filterByCity(event)} />
                 <span>Bento Gonçalves</span>
             </div>
         </div>

@@ -10,7 +10,8 @@ const rootReducer = (state = initialState, action) => {
         case actionTypes.GET_USERS:
             return {
                 ...state,
-                users: [...action.payload]
+                users: [...action.payload],
+                filteredUsers: [...action.payload]
             }
 
         case actionTypes.FILTER_USERS:
@@ -18,11 +19,11 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 filteredUsers: [...action.payload]
             }
-
-        case actionTypes.CONCAT_USERS:   
+        
+        case actionTypes.SORT_USERS:
             return {
                 ...state,
-                filteredUsers: [...action.payload, ...state.filteredUsers]
+                filteredUsers: [...action.payload]
             }
         default:
             return state;

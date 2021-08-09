@@ -15,8 +15,8 @@ const Home = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [usersPerPage] = useState(9);
     
-    // const users = useSelector(state => state.users);
-    const users = useSelector(state => state.filteredUsers.length ? state.filteredUsers : state.users);
+    const users = useSelector(state => state.users);
+    const filteredUsers = useSelector(state => state.filteredUsers);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -31,7 +31,7 @@ const Home = () => {
 
     const indexOfLastUser = currentPage * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;
-    const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+    const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
